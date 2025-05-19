@@ -33,13 +33,18 @@ document.getElementById("studentForm").addEventListener("submit",function(e){
 });
 
 function addStudentToTable(student){
-    const row=document.createElement("tr");
-    row.innerHTML=
-    `<td>${student.name} </td>
-    <td>${student.lastName} </td>
-    <td>${student.grade} </td>
-    <td>${student.date} </td>`
-    ;
+    const row = document.createElement("tr");
+    row.innerHTML =
+        `<td>${student.name}</td>
+        <td>${student.lastName}</td>
+        <td>${student.grade}</td>
+        <td>${student.date}</td>
+        <td><button class="delete">Eliminar</button></td>`;
+
+    row.querySelector(".delete").addEventListener("click", function(){
+        deleteEstudiante(student, row);
+    });
+
     tableBody.appendChild(row);
 }
 
@@ -60,5 +65,14 @@ function calcularPromedio(){
         averageDiv.style.color = "green";
     } else {
         averageDiv.style.color = "red";
+    }
+}
+
+function deleteEstudiante(student, row) {
+    const index = students.indexOf(student);
+    if (index > -1) {
+        students.splice(index, 1);
+        row.remove();
+        calcularPromedio();
     }
 }
