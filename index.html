@@ -1,53 +1,55 @@
 <!DOCTYPE html>
-<html lang="e">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-
+    
 </head>
 <body>
-    <h2>Seguimiento de califiaciones de estudiantes</h2>
+    <h2>Seguimiento de Calificaciones de Estudiantes</h2>
+    
 
-
-     <div id="average">Promedio De califiaciones No Disponible</div>
+    <div id="average">Promedio de Calificaciones: No Disponible</div>
 
     <form id="studentForm">
-     <div>
-        <label for="name">Nombre : </label>
-        <input type="text" id="name" required>
-    </div>
-    <div>
-        <label for="lastname">Apellido : </label>
-        <input type="text" id="lastname" required>
-    </div>
-    <div>
-        <label for="grade">Nota (1.0 - 7.0)</label>
-        <input type="number" id="grade" step="0.1" min="1" max="7" required>
-    </div>
-    <div>
-        <label for="date">Fecha : </label>
-        <input type="date" id="date" required>
-    </div>
-    <button type="submit">Agregar Estudiante</button>
+        <div>
+            <label for="name">Nombre : </label>
+            <input type="text" id="name" required>
+        </div>
+        <div>
+            <label for="lastname">Apellido : </label>
+            <input type="text" id="lastname" required>
+        </div>
+        <div>
+            <label for="grade">Nota (1.0 - 7.0)</label>
+            <input type="number" id="grade" step="0.1" min="1" max="7" required>
+        </div>
+        <div>
+            <label for="date">Fecha : </label>
+            <input type="date" id="date" required>
+        </div>
+        <button type="submit">Agregar Estudiante</button>
+
     
     </form>
 
-<table id="studentsTable">
-<thead>
-    <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Nota</th>
-        <th>Fecha </th>
-        <th>Acciones </th>
-    </tr>
-</thead>
-<tbody>
-        <!--Filas de datos -->
-</tbody>
-</table>
+    <table id="studentsTable"  border="1" >
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Calificación</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+                <th>Arreglos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- FILAS DE DATOS-->
+        </tbody>
+    </table>
 
     <script src="script.js"></script>
 </body>

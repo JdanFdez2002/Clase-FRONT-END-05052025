@@ -24,7 +24,7 @@ h2{
     margin-bottom: 40px;
     margin-top: 40px;
     font-size: x-large;
-    background: red(204, 250, 250);
+    background: rgb(204, 250, 250);
 }
 
 input{
@@ -47,7 +47,7 @@ button{
     margin: 15px;
     display: flex;
     padding: 10px;
-    background: red;
+    background: blue;
     color: white;
     border-radius: 10px;
 }
