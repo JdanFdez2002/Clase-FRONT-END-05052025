@@ -107,3 +107,19 @@ td{
         font-size: 20px;
     }
 }
+
+#statistics {
+    text-align: center;
+    border: 2px solid blue;
+    width: 450px;
+    margin: 20px auto 40px auto;
+    padding: 15px;
+    font-size: large;
+    background: rgb(240, 248, 255);
+    border-radius: 20px;
+    color: black;
+}
+
+#statistics p {
+    margin: 10px 0;
+}

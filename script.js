@@ -76,31 +76,31 @@ function deleteEstudiante(student, row) {
     }
 }
 
-// - -- - - - -- --  - - --  -- -- - - -- -- -- - -- - - -- -- -  - -- - - -- -- - -- - ---- 
 
 function calcularPromedio() {
     if (students.length === 0) {
         averageDiv.textContent = "Promedio de Calificaciones: No Disponible";
         averageDiv.style.color = "black";
+
+        // Estadísticas en cero
+        document.getElementById("totalStudents").textContent = "0";
+        document.getElementById("approvedCount").textContent = "0";
+        document.getElementById("failedCount").textContent = "0";
         return;
     }
 
-    const notas = students.map(estudiante => estudiante.grade)//.map recorre el array y crea un array nuevo el resultado de aplicar una func a cada elemento//
+    const notas = students.map(estudiante => estudiante.grade);
     const suma = notas.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
-
     let promedio = suma / students.length;
     averageDiv.textContent = `Promedio de Calificaciones: ${promedio.toFixed(2)}`;
 
-    if (promedio >= 4) {
-        averageDiv.style.color = "green";
-    } else {
-        averageDiv.style.color = "red";
-    }
-}
+    averageDiv.style.color = promedio >= 4 ? "green" : "red";
 
-function updateTable() {
-    tableBody.innerHTML = "";
-    students.forEach(student => {
-        addStudentToTable(student);
-    });
+    const total = students.length;
+    const aprobados = students.filter(e => e.grade >= 4).length;
+    const reprobados = students.filter(e => e.grade < 4).length;
+
+    document.getElementById("totalStudents").textContent = total;
+    document.getElementById("approvedCount").textContent = aprobados;
+    document.getElementById("failedCount").textContent = reprobados;
 }
